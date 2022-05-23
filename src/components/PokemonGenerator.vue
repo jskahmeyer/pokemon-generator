@@ -1,4 +1,4 @@
-<style lang="scss">
+<style scoped lang="scss">
 body {
   background: #fff;
 }
@@ -178,11 +178,9 @@ label {
     padding-top: 5px;
     width: 200px;
     height: 46px;
-    // transform: skew(40deg);
     font-size: 8px;
     font-style: italic;
     line-height: 9px;
-    // margin: 20px;
   }
 }
 </style>
@@ -496,7 +494,7 @@ label {
 </template>
 
 <script>
-import html2canvas from "html2canvas";
+import html2canvas from "html2canvas"
 
 export default {
   data() {
@@ -517,7 +515,6 @@ export default {
       excerpt: "",
       image: "",
       imageSrc: false,
-      bgImage: "",
       type: "colorless",
       pokemonTypes: [
         "Colorless",
@@ -531,9 +528,6 @@ export default {
         "Water"
       ]
     };
-  },
-  mounted() {
-    this.bgImage = require("@/assets/images/pokemon/lightning-type-blank.png");
   },
   methods: {
     getBackgroundImage: function (type) {

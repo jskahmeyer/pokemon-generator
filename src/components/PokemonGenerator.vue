@@ -19,6 +19,13 @@ label {
   padding: 40px;
 }
 
+.btn-demo {
+  margin-left: 10px;
+  color: #0d6efd;
+  border: none;
+  background-color: transparent;
+}
+
 .image-goes-here {
   display: none;
 }
@@ -213,8 +220,9 @@ label {
               </div>
             </div>
             <div class="form-group">
-              <label for="">Image URL</label>
-              <input class="form-control" type="text" v-model="image" />
+              <!-- <label for="">Image URL</label><button @click="image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSCZRu0Qr4rpvRYD0uSZ0KCmKaBoM_p4ckA&usqp=CAU'" class="btn-demo"><small>Use demo image</small></button> -->
+              <label for="">Image URL</label><button @click="image = 'rainbow-pikachu.jpeg'" class="btn-demo"><small>Use demo image</small></button>
+              <input id="imgInput" class="form-control" type="text" v-model="image" />
             </div>
             <hr class="mt-4">
             <div class="row mt-3">

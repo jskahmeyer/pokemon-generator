@@ -159,7 +159,6 @@ label {
     height: 60px;
     shape-outside: polygon(46px 0, 47px 0, 6px 50px, 5px 50px);
     float: left;
-    clip-path: polygon(46px 0, 47px 0, 6px 50px, 5px 50px);
   }
 
   .shape2 {
@@ -167,7 +166,6 @@ label {
     height: 60px;
     shape-outside: polygon(46px 0, 47px 0, 6px 50px, 5px 50px);
     float: right;
-    clip-path: polygon(46px 0, 47px 0, 6px 50px, 5px 50px);
   }
 
   .parallelogram {

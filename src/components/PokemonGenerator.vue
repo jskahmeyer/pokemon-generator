@@ -164,7 +164,7 @@ label {
   .shape2 {
     width: 50px;
     height: 60px;
-    shape-outside: polygon(46px 0, 47px 0, 6px 50px, 5px 50px);
+    shape-outside: polygon(49px 0, 50px 0, 9px 50px, 8px 50px);
     float: right;
   }
 
@@ -194,13 +194,13 @@ label {
   <div class="my-5 container">
     <h1 class="text-center mb-5">Pokemon Generator</h1>
     <div class="row justify-content-between">
-      <div class="col-lg-7 mb-5">
+      <div class="col-xl-7 mb-5">
         <div class="form-container">
           <div class="form-group">
             <h3>Build Your Pokemon!</h3>
             <div class="form-group">
-              <label for=""> Select Type</label>
-              <select class="form-select" v-model="type">
+              <label for="selectType"> Select Type</label>
+              <select id="selectType" class="form-select" v-model="type">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -209,17 +209,16 @@ label {
             </div>
             <div class="row">
               <div class="col-md-6 form-group">
-                <label for="">Name</label>
-                <input class="form-control" type="text" v-model="name" />
+                <label for="name">Name</label>
+                <input id="name" class="form-control" type="text" v-model="name" maxlength="14"/>
               </div>
               <div class="col-md-6 form-group">
-                <label for="">HP</label>
-                <input class="form-control" type="number" v-model="hp" />
+                <label for="hp">HP</label>
+                <input id="hp" class="form-control" type="number" v-model="hp" maxlength="3"/>
               </div>
             </div>
             <div class="form-group">
-              <!-- <label for="">Image URL</label><button @click="image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhSCZRu0Qr4rpvRYD0uSZ0KCmKaBoM_p4ckA&usqp=CAU'" class="btn-demo"><small>Use demo image</small></button> -->
-              <label for="">Image URL</label><button @click="image = 'rainbow-pikachu.jpeg'" class="btn-demo"><small>Use demo image</small></button>
+              <label for="imgInput">Image URL</label><button @click="image = 'rainbow-pikachu.jpeg'" class="btn-demo"><small>Use demo image</small></button>
               <input id="imgInput" class="form-control" type="text" v-model="image" />
             </div>
             <hr class="mt-4">
@@ -227,13 +226,13 @@ label {
               <div class="col-md-6">
                 <h5 class="mb-0">Move #1</h5>
                 <div class="form-group">
-                  <label for="">Name</label>
-                  <input class="form-control" type="text" v-model="move1name" />
+                  <label for="move1name">Name</label>
+                  <input id="move1name" class="form-control" type="text" v-model="move1name" />
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <label for="">Type</label>
-                    <select class="form-select" v-model="move1type1">
+                    <label for="move1type1">Type</label>
+                    <select id="move1type1" class="form-select" v-model="move1type1">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -241,8 +240,8 @@ label {
                     </select>
                   </div>
                   <div class="col-6">
-                    <label for="">Type 2</label>
-                    <select class="form-select" v-model="move1type2">
+                    <label for="move1type2">Type 2</label>
+                    <select id="move1type2" class="form-select" v-model="move1type2">
             <option selected disabled value="">Optional</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -251,24 +250,26 @@ label {
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="">Description</label>
+                  <label for="move1description">Description</label>
                   <textarea
+                    id="move1description"
                     class="form-control"
                     type="text"
                     v-model="move1description"
+                    maxlength="140"
                   ></textarea>
                 </div>
               </div>
               <div class="col-md-6">
                 <h5 class="mb-0">Move #2</h5>
                 <div class="form-group">
-                  <label for="">Name</label>
-                  <input class="form-control" type="text" v-model="move2name" />
+                  <label for="move2name">Name</label>
+                  <input id="move2name" class="form-control" type="text" v-model="move2name" />
                 </div>
                 <div class="row">
                   <div class="col-6">
-                    <label for="">Type</label>
-                    <select class="form-select" v-model="move2type1">
+                    <label for="move2type1">Type</label>
+                    <select id="move2type1">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -276,8 +277,8 @@ label {
                     </select>
                   </div>
                   <div class="col-6">
-                    <label for="">Type 2</label>
-                    <select class="form-select" v-model="move2type2">
+                    <label for="move2type2">Type 2</label>
+                    <select id="move2type2" class="form-select" v-model="move2type2">
             <option selected disabled value="">Optional</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -286,11 +287,13 @@ label {
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="">Description</label>
+                  <label for="move2description">Description</label>
                   <textarea
+                    id="move2description"
                     class="form-control"
                     type="text"
                     v-model="move2description"
+                    maxlength="140"
                   ></textarea>
                 </div>
               </div>
@@ -298,8 +301,8 @@ label {
             <hr class="mt-4">
             <div class="row">
               <div class="col-md-4 form-group">
-                <label for="">Weakness</label>
-                <select class="form-select" v-model="weaknessType">
+                <label for="weaknessType">Weakness</label>
+                <select id="weaknessType" class="form-select" v-model="weaknessType">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -307,8 +310,8 @@ label {
                 </select>
               </div>
               <div class="col-md-4 form-group">
-                <label for="">Resistance</label>
-                <select class="form-select" v-model="resistanceType">
+                <label for="resistanceType">Resistance</label>
+                <select id="resistanceType" class="form-select" v-model="resistanceType">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -316,8 +319,8 @@ label {
                 </select>
               </div>
               <div class="col-md-4 form-group">
-                <label for="">Retreat</label>
-                <select class="form-select" v-model="retreatType">
+                <label for="retreatType">Retreat</label>
+                <select id="retreatType" class="form-select" v-model="retreatType">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
@@ -326,13 +329,13 @@ label {
               </div>
             </div>
             <div class="col-md-6 form-group">
-              <label for="">Tell Us About Your Pokemon</label>
-              <textarea class="form-control" v-model="excerpt"></textarea>
+              <label for="excerpt">Tell Us About Your Pokemon</label>
+              <textarea id="excerpt" class="form-control" v-model="excerpt" maxlength="208"></textarea>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 text-center">
+      <div class="col-xl-5 text-center">
         <div class="pokemon-card-image">
           <div class="image-capture-container pb-5">
             <div class="image-capture mx-auto">
@@ -537,11 +540,11 @@ export default {
   },
   methods: {
     getBackgroundImage: function (type) {
-      let url = require("@/assets/images/pokemon/" + type + "-type-blank.png");
+      let url = require("@/assets/images/cards/" + type + "-type-blank.png");
       return url;
     },
     getPokemonIcon: function (type) {
-      let url = require("@/assets/images/pokemon/" + type + "-icon.png");
+      let url = require("@/assets/images/icons/" + type + "-icon.png");
       return url;
     },
     saveImage: function () {

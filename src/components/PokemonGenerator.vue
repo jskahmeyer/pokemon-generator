@@ -269,7 +269,7 @@ label {
                 <div class="row">
                   <div class="col-6">
                     <label for="move2type1">Type</label>
-                    <select id="move2type1">
+                    <select id="move2type1" class="form-select">
             <option selected disabled value="">Select Type</option>
             <option v-for="pt in pokemonTypes" :key="pt" :value="pt.toLowerCase()">
               {{ pt }}
